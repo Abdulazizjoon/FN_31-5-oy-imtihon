@@ -8,6 +8,7 @@ let main = document.querySelector(".main_container");
 let li = document.querySelectorAll("li");
 let moon = document.querySelector(".moon");
 let wrapper_container = document.querySelector(".wrapper_container");
+let h = document.querySelector(".h");
 
 fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/keyboard`, {
   method: "GET",
@@ -167,7 +168,6 @@ btn.addEventListener("click", function () {
       let card = createCard(data);
       wrapper_container.innerHTML = card;
 
-
       let res = localStorage.getItem("kolor");
       if (res == "dark") {
         console.log(data[0].meanings[0].partOfSpeech);
@@ -175,11 +175,7 @@ btn.addEventListener("click", function () {
           h.classList += " dark";
         }
       }
-       
-      let test = localStorage.getItem('font')
-      if (test==) {
-        
-      }
+
 
       let bottom = document.querySelector(".bottom");
       let newaudio = document.querySelector(".newaudio");
@@ -194,11 +190,9 @@ btn.addEventListener("click", function () {
         }
       });
 
-
       bottom.addEventListener("click", function () {
         newaudio.play();
       });
-
     })
     .catch((err) => {
       console.log(err.message);
