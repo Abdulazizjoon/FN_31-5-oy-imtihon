@@ -278,7 +278,12 @@ body.dark {
   background-color: #050505;
 }
 
-
+body.dark .h1{
+  color: #fff;
+}
+body.dark li{
+  color: #fff;
+}
 
 /* .darc{
   color: #fff;

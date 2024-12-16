@@ -36,7 +36,13 @@ fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/keyboard`, {
     bottom.addEventListener("click", function () {
       newaudio.play();
     })
-    
+    let res= localStorage.getItem('kolor')
+    if (res=='dark') {
+      alert('dark')
+      h.classList+=' dark'
+    } else {
+      alert('light')
+    }
   })
   .catch((err) => {
     console.log(err);
