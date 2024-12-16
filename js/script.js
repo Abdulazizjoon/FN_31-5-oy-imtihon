@@ -169,7 +169,7 @@ btn.addEventListener("click", function () {
       wrapper_container.innerHTML = card;
       let res = localStorage.getItem("kolor");
       if (res == "dark") {
-        console.log(data[0].meanings[0].definitions[0].synonyms);
+        console.log(data[0].meanings[0].partOfSpeech);
         if (h) {
           h.classList += " dark";
         }

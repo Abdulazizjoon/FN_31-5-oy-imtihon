@@ -23,12 +23,12 @@ function createCard(data) {
           </ul>
           <div class="fle">
             <h3>Synonyms</h3>
-            <h3>${data[0].meanings[0].definitions[0].synonyms}</h3>
+            <h3>${data[0].meanings[0].synonyms[0]}</h3>
           </div>
         </div>
         <div class="verb">
           <div class="flex">
-            <p>verb</p>
+            <p>${data[0].meanings[1].partOfSpeech}</p>
             <div class="tiziqq"></div>
           </div>
           <div class="mining">
