@@ -35,13 +35,13 @@ fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/keyboard`, {
     });
     bottom.addEventListener("click", function () {
       newaudio.play();
-    })
-    let res= localStorage.getItem('kolor')
-    if (res=='dark') {
-      alert('dark')
-      h.classList+=' dark'
-    } else {
-      alert('light')
+    });
+    let res = localStorage.getItem("kolor");
+    if (res == "dark") {
+      console.log(data[0].meanings[0].definitions[0].synonyms);
+      if (h) {
+        h.classList += " dark";
+      }
     }
   })
   .catch((err) => {
@@ -167,22 +167,27 @@ btn.addEventListener("click", function () {
       console.log(data);
       let card = createCard(data);
       wrapper_container.innerHTML = card;
-
+      let res = localStorage.getItem("kolor");
+      if (res == "dark") {
+        console.log(data[0].meanings[0].definitions[0].synonyms);
+        if (h) {
+          h.classList += " dark";
+        }
+      }
       let bottom = document.querySelector(".bottom");
       let newaudio = document.querySelector(".newaudio");
-      let sum
-        let audi = data[0].phonetics
-        audi.forEach((value) => {
-          if (value.audio !== "") {
-            console.log(value.audio);
-            sum = value.audio
-            newaudio.setAttribute('src',sum)
-          }
-
-        })
-      bottom.addEventListener('click',function() {
-        newaudio.play()
-      })
+      let sum;
+      let audi = data[0].phonetics;
+      audi.forEach((value) => {
+        if (value.audio !== "") {
+          console.log(value.audio);
+          sum = value.audio;
+          newaudio.setAttribute("src", sum);
+        }
+      });
+      bottom.addEventListener("click", function () {
+        newaudio.play();
+      });
     })
     .catch((err) => {
       console.log(err.message);
