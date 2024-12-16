@@ -284,7 +284,10 @@ body.dark .h1{
 body.dark li{
   color: #fff;
 }
-
+.transafert{
+  margin-left:35%;
+  margin-top:100px;
+}
 /* .darc{
   color: #fff;
 }
