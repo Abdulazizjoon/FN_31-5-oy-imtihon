@@ -21,26 +21,41 @@ function createCard(data) {
                 .join("")}
             
           </ul>
-          <div class="fle">
-            <h3>Synonyms</h3>
-            <h3>${data[0].meanings[0].synonyms[0]}</h3>
-          </div>
+            <div class="fle">
+              <h3>Synonyms</h3>
+              <h3>
+                ${
+                  data?.[0]?.meanings?.[0]?.synonyms?.[0]
+                    ? data[0].meanings[0].synonyms[0]
+                    : "Synonym mavjud emas"
+                }
+              </h3>
+            </div>
         </div>
         <div class="verb">
           <div class="flex">
-            <p>${data[0].meanings[1].partOfSpeech}</p>
+            <p></p>
             <div class="tiziqq"></div>
           </div>
           <div class="mining">
             <ul class="ul">
-            ${data[0].meanings[1].definitions
-              .map((value) => {
-                return `<li>${value.definition}</li>`;
-              })
-              .join("")}
+            ${
+              data?.[0]?.meanings?.[1]?.definitions
+                ? data[0].meanings[1].definitions
+                    .map((value) => `<li>${value.definition}</li>`)
+                    .join("")
+                : "<li>Definitions mavjud emas</li>"
+            }
               
               <p id="keyboard">
-              “${data[0].meanings[1].definitions[0].example}”
+              “
+              ${
+                data?.[0]?.meanings?.[1]?.definitions?.[0]?.example
+                  ? data[0].meanings[1].definitions[0].example
+                  : "Example mavjud emas"
+              }
+
+              ”
               </p>
               <div class="mining_tiziq"></div>
               <div class="source">
