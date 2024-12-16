@@ -5,7 +5,6 @@ let darkinput = document.querySelector("#toggle");
 let body = document.querySelector("body");
 let select = document.querySelector("#select");
 let main = document.querySelector(".main_container");
-let h = document.querySelector("h1");
 let li = document.querySelectorAll("li");
 let moon = document.querySelector(".moon");
 let wrapper_container = document.querySelector(".wrapper_container");
@@ -167,6 +166,8 @@ btn.addEventListener("click", function () {
       console.log(data);
       let card = createCard(data);
       wrapper_container.innerHTML = card;
+
+
       let res = localStorage.getItem("kolor");
       if (res == "dark") {
         console.log(data[0].meanings[0].partOfSpeech);
@@ -174,10 +175,17 @@ btn.addEventListener("click", function () {
           h.classList += " dark";
         }
       }
+       
+      let test = localStorage.getItem('font')
+      if (test==) {
+        
+      }
+
       let bottom = document.querySelector(".bottom");
       let newaudio = document.querySelector(".newaudio");
       let sum;
       let audi = data[0].phonetics;
+
       audi.forEach((value) => {
         if (value.audio !== "") {
           console.log(value.audio);
@@ -185,9 +193,12 @@ btn.addEventListener("click", function () {
           newaudio.setAttribute("src", sum);
         }
       });
+
+
       bottom.addEventListener("click", function () {
         newaudio.play();
       });
+
     })
     .catch((err) => {
       console.log(err.message);
